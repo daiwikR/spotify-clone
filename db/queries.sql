@@ -31,19 +31,19 @@ WHERE Track.id=Features.track AND Artist.id=Features.artist AND Track.title LIKE
 
 
 #-----Aggiunta brano in una playlist-----
-INSERT INTO TrackBelongsToPlaylist(track, playlist, addedDate)
-VALUES('22zRzwWJp3gfM1O00CsRGm', 'PrsS4E1r054PsZUyl4MTix', NOW());
+-- INSERT INTO TrackBelongsToPlaylist(track, playlist, addedDate)
+-- VALUES('22zRzwWJp3gfM1O00CsRGm', 'PrsS4E1r054PsZUyl4MTix', NOW());
 
 
-#-----Similarity tra canzoni-----
-SELECT * FROM Track track1 INNER JOIN Track track2 ON track1.id < track2.id;
+-- #-----Similarity tra canzoni-----
+-- SELECT * FROM Track track1 INNER JOIN Track track2 ON track1.id < track2.id;
 
 
-#-----Inserimento similarity tra canzoni
-INSERT INTO Similarity(track1,track2,amount)
-VALUES (track1,track2,'amount');
+-- #-----Inserimento similarity tra canzoni
+-- INSERT INTO Similarity(track1,track2,amount)
+-- VALUES (track1,track2,'amount');
 
-UPDATE Track SET plays = 5 WHERE id='5dVUSdsePmEKkq4ryfrobU';
+-- UPDATE Track SET plays = 5 WHERE id='5dVUSdsePmEKkq4ryfrobU';
 
 
 #-----Visualizzazione numero ascolti dell’ultimo mese per artisti
@@ -91,8 +91,8 @@ FROM TrackBelongsToPlaylist
 WHERE playlist="id_playlist";
 
 #then, inside a loop for each track id
-INSERT INTO LikesTrack(user,track,date)
-VALUES ('userid','trackid', NOW());
+-- INSERT INTO LikesTrack(user,track,date)
+-- VALUES ('userid','trackid', NOW());
 
 
 #-----Classifica autori più ascoltati della settimana [high time complexity]
@@ -113,8 +113,8 @@ ORDER BY TotalListen DESC;
 
 
 #-----Calcolo revenue ( (0.30/100plays+0.8/100like)/settimana )
-DROP VIEW WeeklyLeaderboard;
-DROP VIEW WeeklyLikes;
+-- DROP VIEW WeeklyLeaderboard;
+-- DROP VIEW WeeklyLikes;
 
 CREATE VIEW WeeklyLeaderboard AS
 SELECT  ID, NAME, SUM(NListen) TotalListen

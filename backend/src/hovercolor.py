@@ -6,7 +6,7 @@ import numpy as np
 import scipy
 import scipy.misc
 import scipy.cluster
-from fucntools import lru_cache
+from functools import lru_cache
 
 
 NUM_CLUSTERS = 5
